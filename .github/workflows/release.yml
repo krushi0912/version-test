@@ -3,7 +3,7 @@ name: Release Version
 on:
   push:
     branches:
-      - main # Runs only when merging to main
+      - master # Runs only when merging to main
 
 jobs:
   release:
