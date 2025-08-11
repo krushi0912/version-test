@@ -1,0 +1,26 @@
+{
+  "branches": ["main"],
+  "preset": "conventionalcommits",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": false
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["package.json"],
+        "message": "chore: release version ${nextRelease.version} [skip ci]\n\n🔖 Version ${nextRelease.version}\n\n${nextRelease.notes}"
+      }
+    ]
+  ],
+  "releaseRules": [
+    { "type": "release", "release": "major" },
+    { "type": "feat", "release": "minor" },
+    { "type": "fix", "release": "patch" }
+  ]
+}
