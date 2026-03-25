@@ -8,3 +8,7 @@ Route::get('/', function () {
 Route::get('/get', function () {
     return view('welcome');
 });
+
+Route::get('/cursor-demo', function () {
+    return view('welcome');
+});
